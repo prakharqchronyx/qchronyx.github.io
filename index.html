@@ -97,7 +97,7 @@
     .nav-links a {
       color: var(--mid);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.98rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -178,7 +178,7 @@
 
     h1 {
       font-family: 'Orbitron', monospace;
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
       font-weight: 900;
       line-height: 1.1;
       color: var(--dark);
@@ -188,7 +188,7 @@
     h1 .accent { color: var(--accent); }
 
     .hero-tagline {
-      font-size: 1.3rem;
+      font-size: 1.55rem;
       font-weight: 400;
       color: var(--mid);
       font-style: italic;
@@ -198,7 +198,7 @@
     }
 
     .hero-desc {
-      font-size: 1rem;
+      font-size: 1.18rem;
       color: var(--silver);
       margin-bottom: 2.5rem;
       line-height: 1.8;
@@ -246,35 +246,7 @@
 
     .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── STATS BAR ── */
-    .stats-bar {
-      position: relative;
-      z-index: 2;
-      background: rgba(184,92,32,0.08);
-      border-top: 1px solid rgba(184,92,32,0.2);
-      border-bottom: 1px solid rgba(184,92,32,0.2);
-      padding: 2rem 6rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-    }
-
-    .stat { text-align: center; padding: 0 1rem; border-right: 1px solid rgba(120,100,70,0.18); }
-    .stat:last-child { border-right: none; }
-
-    .stat-num {
-      font-family: 'Orbitron', monospace;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--silver);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
+    
 
     /* ── SECTIONS ── */
     section {
@@ -294,7 +266,7 @@
 
     h2 {
       font-family: 'Orbitron', monospace;
-      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
       font-weight: 700;
       color: var(--dark);
       line-height: 1.2;
@@ -305,7 +277,7 @@
 
     .section-sub {
       color: var(--silver);
-      font-size: 1rem;
+      font-size: 1.12rem;
       max-width: 580px;
       margin-bottom: 2.5rem;
       font-style: italic;
@@ -367,7 +339,7 @@
 
     h3 {
       font-family: 'Orbitron', monospace;
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       font-weight: 600;
       color: var(--dark);
       margin-bottom: 0.7rem;
@@ -375,7 +347,7 @@
     }
 
     .product-card p {
-      font-size: 0.88rem;
+      font-size: 1.02rem;
       color: var(--silver);
       line-height: 1.7;
       margin-bottom: 1rem;
@@ -420,14 +392,14 @@
       letter-spacing: 0.04em;
     }
 
-    .why-item p { font-size: 0.87rem; color: var(--silver); line-height: 1.6; }
+    .why-item p { font-size: 1.01rem; color: var(--silver); line-height: 1.7; }
 
     /* ── MARKETS ── */
     #markets { background: rgba(185,175,155,0.3); }
 
     .markets-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
 
@@ -454,7 +426,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .market-card p { font-size: 0.82rem; color: var(--silver); }
+    .market-card p { font-size: 0.98rem; color: var(--silver); }
 
     /* ── TEAM ── */
     .team-grid {
@@ -639,7 +611,6 @@
       .nav-links { display: none; }
       section { padding: 3rem 1.5rem; }
       #hero { padding: 100px 1.5rem 3rem; }
-      .stats-bar { padding: 1.5rem; grid-template-columns: repeat(2,1fr); }
       .products-grid, .markets-grid { grid-template-columns: 1fr; }
       .why-grid, .contact-grid, .team-grid { grid-template-columns: 1fr; }
       footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
@@ -698,25 +669,7 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stat">
-      <div class="stat-num">0</div>
-      <div class="stat-label">Indian Competitors</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">$800M+</div>
-      <div class="stat-label">Global Clock TAM by 2032</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">6–12 hr</div>
-      <div class="stat-label">GPS Holdover</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">₹500 Cr</div>
-      <div class="stat-label">Near-Term SAM</div>
-    </div>
-  </div>
+
 
   <!-- PRODUCTS -->
   <section id="products">
@@ -758,7 +711,7 @@
         <div class="product-tags">
           <span class="tag">GPS-Denied</span>
           <span class="tag">Hot Vapor</span>
-          <span class="tag">UAV / Sub / Missile</span>
+          <span class="tag">UAV / Sub</span>
         </div>
       </div>
     </div>
@@ -789,8 +742,8 @@
       <div class="why-item">
         <div class="why-icon">⚛️</div>
         <div>
-          <h4>Deep Science Foundation</h4>
-          <p>Founded by Prof. Arijit Sharma — specialist in atom-cavity QED and cold &amp; hot Rb atoms — alongside an engineering co-founder with 10+ years in MEMS sensors and 9 patents.</p>
+          <h4>Deep Technology Foundation</h4>
+          <p>Specialist in portable atomic clocks, quantum sensing and metrology, and PNT (Positioning, Navigation and Timing). Founded by atom-physics PhD and a MEMS engineer with 9 patents.</p>
         </div>
       </div>
       <div class="why-item">
@@ -805,32 +758,49 @@
 
   <!-- MARKETS -->
   <section id="markets">
-    <div class="section-eyebrow">Applications</div>
-    <h2>Key <span class="accent">Markets</span></h2>
-    <p class="section-sub">Mission-critical sectors where GPS failure is not an option.</p>
+    <div class="section-eyebrow">Segments &amp; Applications</div>
+    <h2>Key <span class="accent">Segments</span></h2>
+    <p class="section-sub">Mission-critical sectors where precise timing and GPS-independent navigation are non-negotiable.</p>
     <div class="section-divider"></div>
 
-    <div class="markets-grid">
+    <div class="markets-grid" style="grid-template-columns: repeat(3,1fr); gap: 1.2rem;">
+
       <div class="market-card">
-        <div class="market-icon">✈️</div>
-        <h4>Aerospace &amp; Civil Aviation</h4>
-        <p>Fighter jets, UAVs, and commercial aircraft operating in GPS-jammed or spoofed environments need holdover clocks and inertial nav.</p>
+        <div class="market-icon">📡</div>
+        <h4>Telecom &amp; 5G / 6G</h4>
+        <p>5G base stations demand sub-100 ns synchronisation. QChronyx CSACs replace GPS-disciplined oscillators, eliminating sky-view dependency for towers and data centres.</p>
       </div>
+
       <div class="market-card">
-        <div class="market-icon">🛡️</div>
-        <h4>Defence &amp; Missile Guidance</h4>
-        <p>DRDO, RCI, Navy, Air Force. Missile guidance holdover 6–12 hrs. Submarine autonomous navigation in GPS dead-zones.</p>
+        <div class="market-icon">🚄</div>
+        <h4>Railways &amp; Metro</h4>
+        <p>Precision timing for ETCS / TCAS signalling, automatic train protection, and GPS-denied tunnel navigation for high-speed and metro rail networks.</p>
       </div>
-      <div class="market-card">
-        <div class="market-icon">🛰️</div>
-        <h4>Space &amp; Satellite Systems</h4>
-        <p>GEO and LEO satellites require multiple onboard atomic clocks for navigation and timing. Space-grade qualification pathway underway.</p>
-      </div>
+
       <div class="market-card">
         <div class="market-icon">🚁</div>
-        <h4>Drones, ADAS &amp; Industrial</h4>
-        <p>Underground mines, metro tunnels, warehouses, smart cities. 10 Hz–1 kHz update rate vs GPS's 1–10 Hz. Export to global defence integrators.</p>
+        <h4>Drones &amp; UAV</h4>
+        <p>GPS-denied drone autonomy for logistics, surveillance, and mapping. 10 Hz–1 kHz inertial update rate; 10× smaller and 5× cheaper than cold-atom peers.</p>
       </div>
+
+      <div class="market-card">
+        <div class="market-icon">🛡️</div>
+        <h4>Defence &amp; Security</h4>
+        <p>DRDO, RCI, Navy, Air Force. Submarine and surface vessel GPS-denied navigation. GPS holdover 6–12 hrs for jamming / spoofing resilience.</p>
+      </div>
+
+      <div class="market-card">
+        <div class="market-icon">🛰️</div>
+        <h4>Space &amp; Satellite</h4>
+        <p>GEO and LEO satellites require onboard atomic clocks for navigation payload and timing. Space-grade qualification pathway underway with ISRO.</p>
+      </div>
+
+      <div class="market-card">
+        <div class="market-icon">✈️</div>
+        <h4>Aerospace &amp; Aviation</h4>
+        <p>Fighter jets and commercial aircraft in GPS-jammed environments need holdover clocks and inertial nav. Direct integration with INS / FMS systems.</p>
+      </div>
+
     </div>
   </section>
 
