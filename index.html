@@ -899,6 +899,9 @@
           <textarea placeholder="Tell us about your requirement…"></textarea>
         </div>
         <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:fit-content;">Send Message</button>
+      <div id="form-thankyou" style="display:none; margin-top:1rem; padding:0.9rem 1.2rem; background:rgba(58,138,58,0.12); border:1px solid rgba(58,138,58,0.35); border-radius:4px; color:#2a6a2a; font-size:1.05rem; font-family:'Rajdhani',sans-serif; font-weight:600;">
+        Thank you for sending message. Our team will reply shortly.
+      </div>
       </form>
     </div>
   </section>
@@ -929,18 +932,62 @@
       });
     });
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#3a8a3a';
+      const form = e.target;
+      const btn  = form.querySelector('button[type="submit"]');
+      const msg  = document.getElementById('form-thankyou');
+      const inputs = form.querySelectorAll('input,textarea,select');
+
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
+      inputs.forEach(el => el.disabled = true);
+
+      // Collect form data
+      const data = {};
+      form.querySelectorAll('input,textarea,select').forEach(el => {
+        if (el.placeholder || el.tagName === 'SELECT') {
+          const label = el.closest('.form-group')?.querySelector('label')?.textContent || el.name || el.type;
+          data[label] = el.value;
+        }
+      });
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/prakhar@qchronyx.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            ...data,
+            _subject: 'New enquiry from QChronyx website',
+            _captcha: 'false'
+          })
+        });
+        const json = await res.json();
+        if (json.success === 'true' || json.success === true || res.ok) {
+          btn.textContent = 'Sent ✓';
+          btn.style.background = '#3a8a3a';
+          msg.style.display = 'block';
+          setTimeout(() => {
+            btn.textContent = 'Send Message';
+            btn.style.background = '';
+            btn.disabled = false;
+            inputs.forEach(el => el.disabled = false);
+            msg.style.display = 'none';
+            form.reset();
+          }, 6000);
+        } else {
+          throw new Error('Send failed');
+        }
+      } catch (err) {
+        btn.textContent = 'Error — try again';
+        btn.style.background = '#cc3300';
         btn.disabled = false;
-        e.target.reset();
-      }, 3000);
+        inputs.forEach(el => el.disabled = false);
+        setTimeout(() => {
+          btn.textContent = 'Send Message';
+          btn.style.background = '';
+        }, 4000);
+      }
     }
 
     const observer = new IntersectionObserver((entries) => {
